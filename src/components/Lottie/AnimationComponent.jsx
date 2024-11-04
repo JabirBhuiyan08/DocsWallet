@@ -1,13 +1,13 @@
 // src/components/AnimationComponent.js
 
 import { useLottie, useLottieInteractivity } from "lottie-react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const AnimationComponent = ({ animationData, width, height, loop= true, autoplay= true }) => {
    
-    useEffect(() => {
-        console.log("Animation data updated:", animationData);
-    }, [animationData]);
+    // useEffect(() => {
+    //     console.log("Animation data updated:", animationData);
+    // }, [animationData]);
 
     const options = {
         animationData,

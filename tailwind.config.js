@@ -4,8 +4,12 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {colors: {
+      'primary': '#2B2B2B',
+      'secondary': '#FFB200',
+    }},
   },
   plugins: [require("daisyui")],
 }
