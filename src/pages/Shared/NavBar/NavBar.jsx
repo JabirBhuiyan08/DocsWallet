@@ -1,27 +1,12 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo-1.png";
+import { useTheme } from "../../../components/ThemeContext/ThemeContext"; // Import useTheme hook
 
 const NavBar = () => {
-  // State to manage theme
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-
-  // Toggle theme function
-  const toggleTheme = () => {
-    setIsDarkTheme((prev) => !prev);
-  };
-
-  // Apply theme on mount and on theme change
-  useEffect(() => {
-    if (isDarkTheme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkTheme]);
+  const { isDarkTheme, toggleTheme } = useTheme(); // Access theme context
 
   return (
-    <div className={`navbar bg-base-100 w-full ${isDarkTheme ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+    <div className={`navbar  w-full py-4 ${isDarkTheme ? 'bg-purple-950 text-white' : 'bg-purple-50 text-black'}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +30,6 @@ const NavBar = () => {
             className={`menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow ${isDarkTheme ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
           >
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/data-policy">Data Policy</Link></li>
             <li><Link to="/about-us">About Us</Link></li>
             <li><Link to="/help-center">Help Center</Link></li>
             <li><Link to="/logout">Log Out</Link></li>
@@ -54,19 +38,18 @@ const NavBar = () => {
                 type="checkbox"
                 checked={isDarkTheme}
                 onChange={toggleTheme}
-                className="toggle theme-controller border-sky-400 bg-amber-300"
+                className="toggle mt-2 theme-controller border-sky-400 bg-amber-300"
               />
             </li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl">
-          <img className="w-40" src={logo} alt="Logo" />
+          <img className="w-44" src={logo} alt="Logo" />
         </Link>
       </div>
       <div className={`navbar-center hidden lg:flex`}>
         <ul className={`menu menu-horizontal px-1 ${isDarkTheme ? 'text-white' : 'text-black'}`}>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/data-policy">Data Policy</Link></li>
           <li><Link to="/about-us">About Us</Link></li>
           <li><Link to="/help-center">Help Center</Link></li>
           <li><Link to="/logout">Log Out</Link></li>
@@ -75,13 +58,13 @@ const NavBar = () => {
               type="checkbox"
               checked={isDarkTheme}
               onChange={toggleTheme}
-              className="toggle theme-controller border-sky-400 bg-amber-300"
+              className="toggle theme-controller border-sky-400 bg-amber-300 ml-4 mt-"
             />
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn">Login</Link>
+        <Link to="/login" className="btn bg-purple-600 text-white">Login</Link>
       </div>
     </div>
   );
