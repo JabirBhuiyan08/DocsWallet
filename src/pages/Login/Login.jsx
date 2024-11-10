@@ -2,11 +2,14 @@ import React from "react";
 import logo from "../../assets/logo-2.png";
 import { useTheme } from "../../components/ThemeContext/ThemeContext";
 import Footer from "../Shared/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { isDarkTheme, toggleTheme } = useTheme();
 
   return (
+    <>
+    <Helmet><title>Login - Docs Wallet</title></Helmet>
     <div
       className={`min-h-screen flex items-center justify-center flex-col ${
         isDarkTheme ? "bg-slate-850 text-white" : "bg-purple-50 text-black"
@@ -149,6 +152,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+         </>     
   );
 };
 

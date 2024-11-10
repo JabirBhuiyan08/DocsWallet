@@ -5,6 +5,7 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './Routes/Routes.jsx';
 import { ThemeProvider, useTheme } from './components/ThemeContext/ThemeContext.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   const { isDarkTheme } = useTheme(); // Access theme context here
@@ -19,7 +20,9 @@ const App = () => {
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

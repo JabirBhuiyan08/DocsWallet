@@ -2,16 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../components/ThemeContext/ThemeContext";
 import PunchGuy from "../../components/Lottie/PunchGuy";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { isDarkTheme, toggleTheme } = useTheme();
 
   return (
+    <>
+    <Helmet><title>Sign Up - Docs Wallet</title></Helmet>
     <div
       className={`flex flex-col md:flex-row-reverse md:justify-between lg:justify-between lg:mr-0 items-center justify-center min-h-screen p-4 md:p-8 lg:p-16 ${
         isDarkTheme ? "bg-slate-850 text-white" : "bg-white text-black"
       }`}
     >
+
       {/* Left Section with Animation and Slogan */}
       <div className="flex flex-col items-center md:flex-row md:ml-16 md:items-center -mb-10 mr-0 md:mr-8 mb-8 md:mb-0 w-1/2 md:w-full lg:w-full">
         <h1 className="text-2xl md:text-3xl font-bold text-right md:text-left text-violet-800 -mb-8 md:ml-0">
@@ -129,6 +133,7 @@ const SignUp = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
