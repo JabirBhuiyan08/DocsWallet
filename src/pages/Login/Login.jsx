@@ -1,11 +1,32 @@
-import React from "react";
+import { useContext} from "react";
 import logo from "../../assets/logo-2.png";
 import { useTheme } from "../../components/ThemeContext/ThemeContext";
-import Footer from "../Shared/Footer/Footer";
+// import Footer from "../Shared/Footer/Footer";
 import { Helmet } from "react-helmet-async";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
   const { isDarkTheme, toggleTheme } = useTheme();
+  const {signIn}= useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form =event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email,password);
+    signIn(email,password)
+    .then(result=>{
+      const user = result.user;
+      console.log(user);
+      navigate(from, { replace: true });
+    })
+  }
 
   return (
     <>
@@ -38,7 +59,7 @@ const Login = () => {
             isDarkTheme ? "bg-gray-800" : "bg-white"
           }`}
         >
-          <form className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
             {/* Email Field */}
             <div className="form-control">
               <label className="label">
@@ -52,6 +73,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className={`input input-bordered ${
                   isDarkTheme
@@ -75,6 +97,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
+                name="password"
                 placeholder="Enter your password"
                 className={`input input-bordered ${
                   isDarkTheme
