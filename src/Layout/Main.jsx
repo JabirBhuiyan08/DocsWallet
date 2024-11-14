@@ -8,7 +8,7 @@ const Main = () => {
     const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('signup');
 
     return (
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl  mx-auto">
             <div className="sticky top-0 z-10">
                 {!noHeaderFooter && <NavBar />} {/* Use conditional rendering to hide/show NavBar */}
             </div>

@@ -9,7 +9,7 @@ const About = () => {
     <> 
     <Helmet><title>About Us - Docs Wallet</title></Helmet> 
     <div className={`max-w-screen-lg mx-auto p-6 ${isDarkTheme ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
-    <h1 className="text-4xl font-bold text-center text-purple-700 mb-8">About Us</h1>
+    <h1 className="text-4xl mt-16 font-bold text-center text-purple-700 mb-8">About Us</h1>
 
     <section className="mb-6">
       <h2 className="text-2xl font-semibold text-violet-700 mb-3">Our Mission</h2>

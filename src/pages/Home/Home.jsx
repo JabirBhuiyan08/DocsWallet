@@ -14,7 +14,7 @@ const Home = () => {
   return (
    <>
     <Helmet><title>Home - Docs Wallet</title></Helmet>
-    <div className={`flex flex-col items-center p-4 md:p-8 mx-auto max-w-screen-xl ${isDarkTheme ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+    <div className={`flex flex-col  items-center p-4 md:p-8 mx-auto max-w-screen-xl ${isDarkTheme ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
       <div className="flex flex-col-reverse w-full -mt-16 md:mt-0 md:flex-row items-center  justify-between mb-8">
         <div>
           <TopBar />

@@ -19,13 +19,10 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/menu">Our Menu</Link>
+        <Link to="/about-us">About</Link>
       </li>
       <li>
-        <Link to="/order/salad">Order Food</Link>
-      </li>
-      <li>
-        <Link to="/secret">Secret</Link>
+        <Link to="/help-center">Help Center</Link>
       </li>
       {user ? (
         <>
@@ -35,6 +32,7 @@ const NavBar = () => {
           <button onClick={handleLogOut} className="btn btn-ghost">
             LogOut
           </button>
+          
         </>
       ) : (
         <li>
