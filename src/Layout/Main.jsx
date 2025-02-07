@@ -12,7 +12,9 @@ const Main = () => {
             <div className="sticky top-0 z-10">
                 {!noHeaderFooter && <NavBar />} {/* Use conditional rendering to hide/show NavBar */}
             </div>
+            <div className="min-h-screen pt-10">
             <Outlet />
+            </div>
             {!noHeaderFooter && <Footer />} {/* Use conditional rendering to hide/show Footer */}
         </div>
     );

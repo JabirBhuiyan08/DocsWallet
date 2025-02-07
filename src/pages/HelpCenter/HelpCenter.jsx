@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet-async";
 import { useTheme } from "../../components/ThemeContext/ThemeContext";
 import { Link } from "react-router-dom";
+import SocialMediaIcons from "../../hooks/socialMediaIcon";
 
 const HelpCenter = () => {
   const { isDarkTheme } = useTheme();
@@ -127,6 +128,7 @@ const HelpCenter = () => {
           </div>
         </div>
       </div>
+      <SocialMediaIcons></SocialMediaIcons>
     </div>
      </>
   );

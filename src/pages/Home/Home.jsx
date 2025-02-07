@@ -5,6 +5,7 @@ import { useTheme } from "../../components/ThemeContext/ThemeContext";
 import MiddelBar from "./MiddelBar";
 import Btm from "./Btm";
 import { Helmet } from "react-helmet-async";
+import SocialMediaIcons from "../../hooks/socialMediaIcon";
 
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
           <Btm />
         </div>
       </div>
+      <SocialMediaIcons></SocialMediaIcons>
     </div>
     </>
   );

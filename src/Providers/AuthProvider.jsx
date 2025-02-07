@@ -15,18 +15,22 @@ const AuthProvider = ({ children }) => {
 
 
 const createUser = (email, password) => {
+    setLoading(true);	
     return createUserWithEmailAndPassword(auth, email, password);
 }
 
 const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
 }
 
 
 const googleSignIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
 }
 const logOut = () => {
+    setLoading(true);
     return signOut(auth);
 }
 
@@ -41,6 +45,7 @@ useEffect(() => {
             .then(res=> {
                 if(res.data){
                     localStorage.setItem('access-token', res.data.token);
+                    setLoading(false);
                 }
             })
         }
@@ -49,6 +54,7 @@ useEffect(() => {
             //local storafe,caching, in memory)
 
             localStorage.removeItem('access-token');
+            setLoading(false);
         }   
         setLoading(false);
     });

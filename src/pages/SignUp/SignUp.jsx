@@ -100,7 +100,7 @@ const SignUp = () => {
                 className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
                   isDarkTheme
                     ? "bg-gray-700 text-white focus:ring-purple-500"
-                    : "focus:ring-purple-500"
+                    : "focus:ring-purple-500 bg-gray-700 text-white"
                 }`}
                 placeholder="Enter your name"
               />
@@ -126,7 +126,7 @@ const SignUp = () => {
                 className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
                   isDarkTheme
                     ? "bg-gray-700 text-white focus:ring-purple-500"
-                    : "focus:ring-purple-500"
+                    : "focus:ring-purple-500 bg-gray-700 text-white"
                 }`}
                 placeholder="Enter your email"
               />
@@ -152,7 +152,7 @@ const SignUp = () => {
                 className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
                   isDarkTheme
                     ? "bg-gray-700 text-white focus:ring-purple-500"
-                    : "focus:ring-purple-500"
+                    : "focus:ring-purple-500 bg-gray-700 text-white"
                 }`}
                 placeholder="Enter your password"
               />
