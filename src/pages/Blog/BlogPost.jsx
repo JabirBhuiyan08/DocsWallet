@@ -11,7 +11,7 @@ const {register,handleSubmit, reset} = useForm();
 const axiosPublic = useAxiosPublic();
 
 const onSubmit = async (data) => {
-    console.log(data);
+    console.log(data); 
     try{
         const blogData = {
             ...data,
