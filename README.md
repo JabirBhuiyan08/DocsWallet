@@ -1,1 +1,1 @@
-docs wallet
+Docs Wallet is your ultimate digital wallet for secure and hassle-free document storage. With an intuitive interface and smart features, it lets you store, access, and manage your important files effortlessly. Built with the latest web technologies like the MERN stack and Tailwind CSS, Docs Wallet delivers a seamless and secure experience. Whether you're a student, professional, or business owner, keeping your documents organized has never been easier. Join thousands of users who trust Docs Wallet—sign up today and take control of your documents with ease!
